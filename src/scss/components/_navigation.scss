@@ -1,0 +1,23 @@
+header {
+  .uk-navbar-container:not(.uk-navbar-transparent) {
+    background: transparent;
+  }
+  .uk-navbar-nav > li > a {
+    color: $color-black;
+  }
+  nav {
+    .logo {
+      min-width: 200px;
+    }
+  }
+  .uk-navbar-nav {
+    flex-direction: column;
+    padding: 25px 0 0 0;
+  }
+  @include for-tablet {
+    .uk-navbar-nav {
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+}

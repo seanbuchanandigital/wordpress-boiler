@@ -1,0 +1,24 @@
+{
+  "name": "wordpress-boiler",
+  "version": "1.0.0",
+  "description": "A wordpress boiler template",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "cssnano-webpack-plugin": "^1.0.3",
+    "mini-css-extract-plugin": "^1.6.0",
+    "postcss": "^8.2.13",
+    "postcss-loader": "^5.2.0",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.36.2",
+    "webpack-build-notifier": "^2.2.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dashboard": "^3.3.1"
+  },
+  "dependencies": {
+    "uikit": "^3.6.20"
+  }
+}

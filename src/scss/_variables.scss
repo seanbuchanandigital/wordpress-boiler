@@ -1,0 +1,37 @@
+// Colours
+$color-black: #333;
+$color-white: #fff;
+
+$brand-colour-primary: #000;
+$brand-colour-secondary: #fff;
+
+// Responsvive
+$break-small: 640px;
+$break-medium: 960px;
+$break-large: 1200px;
+$break-xlarge: 1600px;
+
+// Mixin
+@mixin for-phone {
+  @media only screen and (min-width: $break-small) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media only screen and (min-width: $break-medium) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media only screen and (min-width: $break-large) {
+    @content;
+  }
+}
+
+@mixin for-desktop-large {
+  @media only screen and (min-width: $break-xlarge) {
+    @content;
+  }
+}
