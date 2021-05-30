@@ -6,6 +6,7 @@
     "build": "webpack"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.4",
     "cssnano-webpack-plugin": "^1.0.3",
     "mini-css-extract-plugin": "^1.6.0",
@@ -19,6 +20,7 @@
     "webpack-dashboard": "^3.3.1"
   },
   "dependencies": {
+    "jquery": "^3.6.0",
     "uikit": "^3.6.20"
   }
 }

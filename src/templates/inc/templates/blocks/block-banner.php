@@ -5,8 +5,6 @@
  *
  */
 
-echo 'here';
-
 // Create id attribute allowing for custom "anchor" value.
 $class = getBlockClass('banner-block', $block);
 
