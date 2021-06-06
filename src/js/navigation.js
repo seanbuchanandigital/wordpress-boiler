@@ -26,7 +26,6 @@ $(document).ready(function(){
 });
 
 $(window).resize(function() {
-    console.log($(window).width());
     $(window).width();
     let width = $(window).width();
     if(width <= 960){

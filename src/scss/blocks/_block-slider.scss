@@ -1,0 +1,40 @@
+.acf-slider-block {
+  position: relative;
+  .uk-background-cover {
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: $color-white;
+    }
+    .slider-item__content {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  a {
+    svg {
+      color: $color-white;
+    }
+  }
+  .slider-item__dotnav {
+    bottom: 40px;
+  }
+  .uk-dotnav > li > * {
+    background-color: rgba($color-white, .4);
+    border-color: transparent;
+  }
+  .uk-dotnav > .uk-active > * {
+    background-color: rgba($color-white, 1);
+    border-color: transparent;
+  }
+}

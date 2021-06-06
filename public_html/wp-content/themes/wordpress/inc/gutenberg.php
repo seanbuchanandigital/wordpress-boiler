@@ -17,6 +17,10 @@ define('coreBlocks', serialize( array(
     'core/group',
     'gravityforms/form',
     'acf/banner',
+    'acf/slider',
+    'acf/parallax',
+    'acf/card',
+    'acf/tab'
 )));
 
 /**
@@ -87,7 +91,7 @@ add_action('acf/init', function () {
     // Check function exists.
     if (function_exists('acf_register_block_type')) {
 
-        // register a slider block
+        // register a banner block
         acf_register_block_type(array(
             'category'          => 'wordpress-blocks',
             'name'              => 'banner',
@@ -101,6 +105,70 @@ add_action('acf/init', function () {
             ),
             'mode'              => 'edit',
             'keywords'          => array('banners', 'banner'),
+        ));
+
+        // register a slider block
+        acf_register_block_type(array(
+            'category'          => 'wordpress-blocks',
+            'name'              => 'slider',
+            'title'             => __('Slider'),
+            'description'       => __('Displays a Slider block'),
+            'render_template'   => 'inc/templates/blocks/block-slider.php',
+            'icon'              => 'slides',
+            'supports'          => array(
+                'align' => false,
+                'mode'  => true,
+            ),
+            'mode'              => 'edit',
+            'keywords'          => array('sliders', 'slider'),
+        ));
+
+        // register a parallax block
+        acf_register_block_type(array(
+            'category'          => 'wordpress-blocks',
+            'name'              => 'parallax',
+            'title'             => __('Parallax'),
+            'description'       => __('Displays a Parallax block'),
+            'render_template'   => 'inc/templates/blocks/block-parallax.php',
+            'icon'              => 'slides',
+            'supports'          => array(
+                'align' => false,
+                'mode'  => true,
+            ),
+            'mode'              => 'edit',
+            'keywords'          => array('parallax'),
+        ));
+
+        // register a content block
+        acf_register_block_type(array(
+            'category'          => 'wordpress-blocks',
+            'name'              => 'card',
+            'title'             => __('Card'),
+            'description'       => __('Displays a Card block'),
+            'render_template'   => 'inc/templates/blocks/block-card.php',
+            'icon'              => 'slides',
+            'supports'          => array(
+                'align' => false,
+                'mode'  => true,
+            ),
+            'mode'              => 'edit',
+            'keywords'          => array('card'),
+        ));
+
+        // register a content block
+        acf_register_block_type(array(
+            'category'          => 'wordpress-blocks',
+            'name'              => 'tab',
+            'title'             => __('Tab'),
+            'description'       => __('Displays a Tab block'),
+            'render_template'   => 'inc/templates/blocks/block-tab.php',
+            'icon'              => 'slides',
+            'supports'          => array(
+                'align' => false,
+                'mode'  => true,
+            ),
+            'mode'              => 'edit',
+            'keywords'          => array('tab'),
         ));
 
     }

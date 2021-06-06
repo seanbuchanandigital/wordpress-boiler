@@ -221,3 +221,21 @@ function add_file_types_to_uploads($file_types){
     return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
+
+/**
+ * Automatic Aria roles and labels for Wysiwyg Editor
+ */
+function accessibilityFormater($content)
+{
+    $replace = [
+        '/<h1/i' => '<h1 role="heading" aria-level="1"',
+        '/<h2/i' => '<h2 role="heading" aria-level="2"',
+        '/<h3/i' => '<h3 role="heading" aria-level="3"',
+        '/<h4/i' => '<h4 role="heading" aria-level="4"',
+        '/<h5/i' => '<h5 role="heading" aria-level="5"',
+        '/<h6/i' => '<h6 role="heading" aria-level="6"',
+        '/<a/i' => '<a role="link"',
+    ];
+
+    echo preg_replace(array_keys($replace), array_values( $replace ), $content);
+}

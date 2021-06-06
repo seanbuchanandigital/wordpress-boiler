@@ -1,2 +1,2 @@
-# Compile SCSS
+# Compile SCSS and Template Files
 - npx webpack
