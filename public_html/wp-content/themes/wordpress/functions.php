@@ -239,3 +239,28 @@ function accessibilityFormater($content)
 
     echo preg_replace(array_keys($replace), array_values( $replace ), $content);
 }
+
+/**
+ * Register Gutenberg Blocks
+ */
+
+function registerGutenbergBlocks($category, $title, $icon)
+{
+
+    $name = strtolower($title);
+
+    acf_register_block_type(array(
+        'category'          => $category,
+        'name'              => $name,
+        'title'             => __($title),
+        'description'       => __('Displays a ' . $title . ' block'),
+        'render_template'   => 'inc/templates/blocks/block-' . $name . '.php',
+        'icon'              => $icon,
+        'supports'          => array(
+            'align' => false,
+            'mode'  => true,
+        ),
+        'mode'              => 'edit',
+        'keywords'          => array($name),
+    ));
+}

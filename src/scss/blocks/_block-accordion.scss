@@ -1,0 +1,51 @@
+.acf-accordion-block {
+  .uk-accordion {
+
+    li .uk-accordion-title {
+      border-bottom: 2px solid lighten($color-grey, 10%);
+      color: lighten($color-black, 40%);
+      padding: 0 0 20px 0;
+      position: relative;
+      text-decoration: none;
+      transition: color $transition;
+    }
+
+    li .uk-accordion-title:hover {
+      color: $color-black;
+    }
+
+    li .uk-accordion-title:hover::before {
+      background-color: $color-black;
+    }
+
+    li .uk-accordion-title::before {
+      color: $color-white;
+      content: "+";
+      background-color: lighten($color-black, 40%);
+      background-image: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-left: unset;
+      margin-right: 20px;
+      float: left;
+      display: flex;
+      justify-content: center;
+      transition: background-color $transition;
+    }
+
+    li .uk-accordion-content {
+      margin: 0;
+      padding: 0 0 20px 0;
+    }
+
+    li.uk-open .uk-accordion-title {
+      color: $color-black;
+    }
+
+    li.uk-open .uk-accordion-title::before {
+      content: "-";
+      background-color: $color-black;
+    }
+  }
+}

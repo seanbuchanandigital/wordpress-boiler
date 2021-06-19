@@ -20,7 +20,8 @@ define('coreBlocks', serialize( array(
     'acf/slider',
     'acf/parallax',
     'acf/card',
-    'acf/tab'
+    'acf/switcher',
+    'acf/accordion'
 )));
 
 /**
@@ -92,84 +93,22 @@ add_action('acf/init', function () {
     if (function_exists('acf_register_block_type')) {
 
         // register a banner block
-        acf_register_block_type(array(
-            'category'          => 'wordpress-blocks',
-            'name'              => 'banner',
-            'title'             => __('Banner'),
-            'description'       => __('Displays a Banner block'),
-            'render_template'   => 'inc/templates/blocks/block-banner.php',
-            'icon'              => 'slides',
-            'supports'          => array(
-                'align' => false,
-                'mode'  => true,
-            ),
-            'mode'              => 'edit',
-            'keywords'          => array('banners', 'banner'),
-        ));
+        registerGutenbergBlocks('wordpress-blocks', 'Banner', 'format-image');
 
         // register a slider block
-        acf_register_block_type(array(
-            'category'          => 'wordpress-blocks',
-            'name'              => 'slider',
-            'title'             => __('Slider'),
-            'description'       => __('Displays a Slider block'),
-            'render_template'   => 'inc/templates/blocks/block-slider.php',
-            'icon'              => 'slides',
-            'supports'          => array(
-                'align' => false,
-                'mode'  => true,
-            ),
-            'mode'              => 'edit',
-            'keywords'          => array('sliders', 'slider'),
-        ));
+        registerGutenbergBlocks('wordpress-blocks', 'Slider', 'slides');
 
         // register a parallax block
-        acf_register_block_type(array(
-            'category'          => 'wordpress-blocks',
-            'name'              => 'parallax',
-            'title'             => __('Parallax'),
-            'description'       => __('Displays a Parallax block'),
-            'render_template'   => 'inc/templates/blocks/block-parallax.php',
-            'icon'              => 'slides',
-            'supports'          => array(
-                'align' => false,
-                'mode'  => true,
-            ),
-            'mode'              => 'edit',
-            'keywords'          => array('parallax'),
-        ));
+        registerGutenbergBlocks('wordpress-blocks', 'Parallax', 'images-alt');
 
-        // register a content block
-        acf_register_block_type(array(
-            'category'          => 'wordpress-blocks',
-            'name'              => 'card',
-            'title'             => __('Card'),
-            'description'       => __('Displays a Card block'),
-            'render_template'   => 'inc/templates/blocks/block-card.php',
-            'icon'              => 'slides',
-            'supports'          => array(
-                'align' => false,
-                'mode'  => true,
-            ),
-            'mode'              => 'edit',
-            'keywords'          => array('card'),
-        ));
+        // register a card block
+        registerGutenbergBlocks('wordpress-blocks', 'Card', 'format-aside');
 
-        // register a content block
-        acf_register_block_type(array(
-            'category'          => 'wordpress-blocks',
-            'name'              => 'tab',
-            'title'             => __('Tab'),
-            'description'       => __('Displays a Tab block'),
-            'render_template'   => 'inc/templates/blocks/block-tab.php',
-            'icon'              => 'slides',
-            'supports'          => array(
-                'align' => false,
-                'mode'  => true,
-            ),
-            'mode'              => 'edit',
-            'keywords'          => array('tab'),
-        ));
+        // register a tab block
+        registerGutenbergBlocks('wordpress-blocks', 'Switcher', 'category');
+
+        // register a accordion block
+        registerGutenbergBlocks('wordpress-blocks', 'Accordion', 'excerpt-view');
 
     }
 

@@ -1,30 +1,11 @@
 {
-    "key": "group_60bc6ff562cea",
-    "title": "Blocks:: Card",
+    "key": "group_60bd6bea796ed",
+    "title": "Blocks:: Accordion",
     "fields": [
         {
-            "key": "field_60c554725b617",
-            "label": "Heading",
-            "name": "cards_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_60bc7001f40fc",
-            "label": "Cards",
-            "name": "cards",
+            "key": "field_60bd6d6fdfc54",
+            "label": "Accordion",
+            "name": "accordion",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -41,10 +22,10 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_60bc75fd08017",
-                    "label": "Image",
-                    "name": "card_image",
-                    "type": "image",
+                    "key": "field_60bd6d7bdfc55",
+                    "label": "Title",
+                    "name": "accordion_title",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -53,21 +34,16 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
-                    "key": "field_60bc760608018",
+                    "key": "field_60bd6d88dfc56",
                     "label": "Text",
-                    "name": "card_text",
+                    "name": "accordion_text",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -91,7 +67,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/card"
+                "value": "acf\/accordion"
             }
         ]
     ],
@@ -103,5 +79,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623544976
+    "modified": 1623030745
 }

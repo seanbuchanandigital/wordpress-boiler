@@ -14210,23 +14210,61 @@ h3 {
   text-decoration: underline;
 }
 
+.acf-accordion-block .uk-accordion li .uk-accordion-title {
+  border-bottom: 2px solid #e6e6e6;
+  color: #999999;
+  padding: 0 0 20px 0;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.acf-accordion-block .uk-accordion li .uk-accordion-title:hover {
+  color: #333;
+}
+.acf-accordion-block .uk-accordion li .uk-accordion-title:hover::before {
+  background-color: #333;
+}
+.acf-accordion-block .uk-accordion li .uk-accordion-title::before {
+  color: #fff;
+  content: "+";
+  background-color: #999999;
+  background-image: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: unset;
+  margin-right: 20px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+}
+.acf-accordion-block .uk-accordion li .uk-accordion-content {
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+.acf-accordion-block .uk-accordion li.uk-open .uk-accordion-title {
+  color: #333;
+}
+.acf-accordion-block .uk-accordion li.uk-open .uk-accordion-title::before {
+  content: "-";
+  background-color: #333;
+}
+
 body {
   min-height: 100vmax;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+.block-html h1,
+.block-html h2,
+.block-html h3,
+.block-html h4,
+.block-html h5,
+.block-html h6 {
+  margin: 0 0 20px 0;
 }
-
-p {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+.block-html p {
+  margin: 20px 0 0 0;
 }
 
 header {
@@ -14264,6 +14302,13 @@ header .uk-navbar-nav {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   cursor: pointer;
+}
+
+.section-heading {
+  text-align: center;
+}
+.section-heading h2 {
+  margin: 0 0 40px 0;
 }
 
 footer .uk-navbar-container:not(.uk-navbar-transparent) {

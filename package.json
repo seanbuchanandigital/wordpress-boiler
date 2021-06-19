@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A wordpress boiler template",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "build:watch": "webpack --watch"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^9.0.0",

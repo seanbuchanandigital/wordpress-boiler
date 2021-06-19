@@ -1,13 +1,75 @@
 {
     "key": "group_60bc8e9824f85",
-    "title": "Blocks:: Tab",
-    "fields": [],
+    "title": "Blocks:: Switcher",
+    "fields": [
+        {
+            "key": "field_60bd69a79b03a",
+            "label": "Switcher",
+            "name": "switcher",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_60bd7b9d42f8d",
+                    "label": "Title",
+                    "name": "switcher_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_60bd70845fb60",
+                    "label": "Accordion",
+                    "name": "switcher_accordion",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_60bd6bea796ed"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        }
+    ],
     "location": [
         [
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/tab"
+                "value": "acf\/switcher"
             }
         ]
     ],
@@ -19,5 +81,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622970018
+    "modified": 1623032603
 }

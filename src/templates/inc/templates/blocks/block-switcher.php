@@ -1,32 +1,28 @@
 <?php
 
 /**
- * Tab
+ * Switcher
  *
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$class = getBlockClass('banner-block', $block);
-
-// ACF Fields
-$image          = get_field('banner_image');
-$text           = get_field('banner_text');
+$class = getBlockClass('switcher-block', $block);
 ?>
 
 <section class="<?= $class; ?>">
     <div class="uk-container uk-margin-auto uk-padding">
         <div uk-grid>
             <div class="uk-child-1-4">
-                <ul class="uk-tab-left" uk-tab>
+                <ul class="uk-tab-left" uk-tab="connect: #component-tab-left; animation: uk-animation-fade">
                     <?php
                     $i = 0;
-                    if(have_rows('tabs')){
-                        while(have_rows('tabs')){
+                    if(have_rows('switcher')){
+                        while(have_rows('switcher')){
                             if($i == 0){
                                 $class = 'active';
                             }
                             the_row();
-                            $title = get_sub_field('tab_title');
+                            $title = get_sub_field('switcher_title');
                             ?><li><a class="<?= $class; ?>" href=""><?= $title; ?></a></li><?php
                         }
                         $i++;
@@ -35,14 +31,16 @@ $text           = get_field('banner_text');
                 </ul>
             </div>
             <div class="uk-child-3-4">
-                <?php
-                if(have_rows('tabs')){
-                    while(have_rows('tabs')){
-                        the_row();
-                        require(__DIR__ . '/block-accordion.php');
-                    }
-                }
-                ?>
+                <ul id="component-tab-left" class="uk-switcher">
+                        <?php
+                        if(have_rows('switcher')){
+                            while(have_rows('switcher')){
+                                the_row();
+                                ?><li><?php require(__DIR__ . '/block-accordion.php'); ?></li><?php
+                            }
+                        }
+                        ?>
+                </ul>
             </div>
         </div>
     </div>

@@ -6,12 +6,22 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$class = getBlockClass('card-block', $block);
-$count = count(get_field('cards'));
+$class      = getBlockClass('card-block', $block);
+$count      = count(get_field('cards'));
+$heading    = get_field('cards_heading');
 ?>
 
 <section class="<?= $class; ?>">
     <div class="uk-container uk-margin-auto uk-padding uk-padding-remove-vertical">
+        <?php
+        if($heading){
+            ?>
+            <div class="section-heading">
+                <h2><?= $heading; ?></h2>
+            </div>
+            <?php
+        }
+        ?>
         <div class="uk-child-width-1-<?= $count; ?>" uk-grid>
             <?php
             if(have_rows('cards')){
