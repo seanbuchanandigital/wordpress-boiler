@@ -1,10 +1,11 @@
 .acf-accordion-block {
   .uk-accordion {
-
+    padding: 0;
+    margin: 0;
     li .uk-accordion-title {
       border-bottom: 2px solid lighten($color-grey, 10%);
       color: lighten($color-black, 40%);
-      padding: 0 0 20px 0;
+      padding: 0 0 $p-2 0;
       position: relative;
       text-decoration: none;
       transition: color $transition;
@@ -23,11 +24,11 @@
       content: "+";
       background-color: lighten($color-black, 40%);
       background-image: none;
-      width: 30px;
-      height: 30px;
+      width: $p-3;
+      height: $p-3;
       border-radius: 50%;
       margin-left: unset;
-      margin-right: 20px;
+      margin-right: $p-2;
       float: left;
       display: flex;
       justify-content: center;
@@ -36,7 +37,7 @@
 
     li .uk-accordion-content {
       margin: 0;
-      padding: 0 0 20px 0;
+      padding: 0 0 $p-2 0;
     }
 
     li.uk-open .uk-accordion-title {

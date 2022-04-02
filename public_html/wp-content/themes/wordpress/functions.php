@@ -235,6 +235,14 @@ function accessibilityFormater($content)
         '/<h5/i' => '<h5 role="heading" aria-level="5"',
         '/<h6/i' => '<h6 role="heading" aria-level="6"',
         '/<a/i' => '<a role="link"',
+        '/<ul/i' => '<ul role="list"',
+        '/<li/i' => '<li role="listitem"',
+        '/<img/i' => '<img role="img"',
+        '/<table/i' => '<table role="table"',
+        '/<tr/i' => '<tr role="row"',
+        '/<th/i' => '<th role="columnheader"',
+        '/<td/i' => '<td role="cell"',
+        '/<hr/i' => '<hr role="separator"',
     ];
 
     echo preg_replace(array_keys($replace), array_values( $replace ), $content);
@@ -264,3 +272,9 @@ function registerGutenbergBlocks($category, $title, $icon)
         'keywords'          => array($name),
     ));
 }
+
+/**
+ * Register Project Post Type
+ */
+
+require(__DIR__ . '/inc/models/project.php');

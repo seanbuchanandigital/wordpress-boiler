@@ -1,7 +1,7 @@
 {
-  "name": "wordpress-boiler",
+  "name": "react-wordpress",
   "version": "1.0.0",
-  "description": "A wordpress boiler template",
+  "description": "A react wordpress headless template",
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack --watch"
@@ -21,7 +21,6 @@
     "webpack-dashboard": "^3.3.1"
   },
   "dependencies": {
-    "jquery": "^3.6.0",
-    "uikit": "^3.6.20"
+    "jquery": "^3.6.0"
   }
 }

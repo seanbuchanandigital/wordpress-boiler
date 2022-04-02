@@ -14210,6 +14210,10 @@ h3 {
   text-decoration: underline;
 }
 
+.acf-accordion-block .uk-accordion {
+  padding: 0;
+  margin: 0;
+}
 .acf-accordion-block .uk-accordion li .uk-accordion-title {
   border-bottom: 2px solid #e6e6e6;
   color: #999999;

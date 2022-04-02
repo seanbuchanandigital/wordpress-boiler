@@ -13,8 +13,8 @@ $class = getBlockClass('slider-block', $block);
     <div uk-slider="center: true">
         <ul class="uk-slider-items uk-child-width-1-1">
             <?php
-            if(have_rows('slider_slides')){
-                while(have_rows('slider_slides')){
+            if(have_rows('slider_slides')):
+                while(have_rows('slider_slides')):
                     the_row();
                     // ACF Fields
                     $image          = get_sub_field('slide_image');
@@ -34,10 +34,8 @@ $class = getBlockClass('slider-block', $block);
                         </div>
                         <?php require(__DIR__ . '/../components/overlay.php'); ?>
                     </li>
-                    <?php
-                }
-            }
-            ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </ul>
         <div class="slider-item__dotnav uk-position-absolute uk-position-bottom-center">
             <div class="uk-container uk-margin-auto">

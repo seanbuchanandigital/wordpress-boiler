@@ -13,7 +13,7 @@ $image          = get_field('banner_image');
 $text           = get_field('banner_text');
 ?>
 
-<section class="<?= $class; ?>">
+<section role="banner" class="<?= $class; ?>">
     <div role="img" aria-label="<?= $image['alt']; ?>" class="uk-background-cover" style="background-image: url(<?= $image['url']; ?>);">
         <div class="banner-item__content uk-container uk-margin-auto uk-padding">
             <div class="uk-child-width-1-1" uk-grid>

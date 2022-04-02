@@ -21,13 +21,15 @@ define('coreBlocks', serialize( array(
     'acf/parallax',
     'acf/card',
     'acf/switcher',
-    'acf/accordion'
+    'acf/accordion',
+    'acf/filter',
+    'acf/ajax-filter'
 )));
 
 /**
  * Define allowed block types in editor.
  */
-add_filter( 'allowed_block_types', 'theme_allowed_block_types' );
+add_filter( 'allowed_block_types_all', 'theme_allowed_block_types' );
 function theme_allowed_block_types( $allowed_blocks ) {
     return unserialize(coreBlocks);
 }
@@ -38,16 +40,16 @@ function theme_allowed_block_types( $allowed_blocks ) {
 add_action( 'init', 'remove_core_block_patterns' );
 function remove_core_block_patterns() {
     $core_block_patterns = array(
-        'core/text-two-columns',
-        'core/two-buttons',
-        'core/two-images',
-        'core/text-two-columns-with-images',
-        'core/text-three-columns-buttons',
-        'core/large-header',
-        'core/large-header-button',
-        'core/three-buttons',
-        'core/heading-paragraph',
-        'core/quote'
+//        'core/text-two-columns',
+//        'core/two-buttons',
+//        'core/two-images',
+//        'core/text-two-columns-with-images',
+//        'core/text-three-columns-buttons',
+//        'core/large-header',
+//        'core/large-header-button',
+//        'core/three-buttons',
+//        'core/heading-paragraph',
+//        'core/quote'
     );
     foreach ( $core_block_patterns as $core_block_pattern ) {
         unregister_block_pattern($core_block_pattern);
@@ -84,7 +86,7 @@ function wordpress_block_category( $categories, $post ) {
         )
     );
 }
-add_filter( 'block_categories', 'wordpress_block_category', 10, 2);
+add_filter( 'block_categories_all', 'wordpress_block_category', 10, 2);
 
 // Registering blocks
 add_action('acf/init', function () {
@@ -110,6 +112,11 @@ add_action('acf/init', function () {
         // register a accordion block
         registerGutenbergBlocks('wordpress-blocks', 'Accordion', 'excerpt-view');
 
+        // register a filter block
+        registerGutenbergBlocks('wordpress-blocks', 'Filter', 'excerpt-view');
+
+        // register a ajax filter block
+        registerGutenbergBlocks('wordpress-blocks', 'AJAX-Filter', 'excerpt-view');
     }
 
 });

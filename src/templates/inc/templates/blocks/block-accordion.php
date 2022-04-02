@@ -13,25 +13,18 @@ $class = getBlockClass('accordion-block', $block);
     <div class="uk-container uk-margin-auto uk-padding">
         <div class="uk-child-width-1-1" uk-grid>
             <div>
-                <ul uk-accordion>
+                <ul role="list" uk-accordion>
                     <?php
                     $i = 0;
-                    if(have_rows('accordion')){
-                        while(have_rows('accordion')){
+                    if(have_rows('accordion')):
+                        while(have_rows('accordion')):
                             the_row();
                             $title = get_sub_field('accordion_title');
                             $text  = get_sub_field('accordion_text');
-                            ?>
-                            <li class="<?php if($i == 0){ echo 'uk-open'; } ?>">
-                                <a class="uk-accordion-title" href="#"><?= $title; ?></a>
-                                <div class="uk-accordion-content">
-                                    <?php accessibilityFormater($text); ?>
-                                </div>
-                            </li>
-                            <?php
+                            require(__DIR__.'/../components/component-accordion.php');
                             $i++;
-                        }
-                    }
+                        endwhile;
+                    endif;
                     ?>
                 </ul>
             </div>

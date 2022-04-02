@@ -13,13 +13,17 @@ $break-large: 1200px;
 $break-xlarge: 1600px;
 
 // Padding
-$section-padding: 2rem;
+$section-padding: 4rem;
+
+$p-1: 10px;
+$p-2: 20px;
+$p-3: 30px;
+$p-4: 40px;
 
 // Transition
 $transition: .3s ease-in-out;
 
 // Font Size
-
 // Mixin
 @mixin for-phone {
   @media only screen and (min-width: $break-small) {
