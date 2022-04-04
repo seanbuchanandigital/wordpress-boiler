@@ -14255,6 +14255,14 @@ h3 {
   background-color: #333;
 }
 
+.acf-filter-block {
+  padding: 4rem 0;
+}
+
+.acf-ajax-filter-block {
+  padding: 4rem 0;
+}
+
 body {
   min-height: 100vmax;
 }

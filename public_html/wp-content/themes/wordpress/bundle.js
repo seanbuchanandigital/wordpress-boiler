@@ -61,6 +61,26 @@ eval("/*! UIkit 3.6.20 | https://www.getuikit.com | (c) 2014 - 2021 YOOtheme | M
 
 /***/ }),
 
+/***/ "./src/js/ajax-filter.js":
+/*!*******************************!*\
+  !*** ./src/js/ajax-filter.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\nlet ajaxPostTypeConfig = {\n    element: '.ajax-post-type'\n}\n\n$(document).ready(function(){\n    ($(ajaxPostTypeConfig.element)) ? $(ajaxPostTypeConfig.element).ajaxPostTypeFilter() : null;\n});\n\n//# sourceURL=webpack://react-wordpress/./src/js/ajax-filter.js?");
+
+/***/ }),
+
+/***/ "./src/js/ajax-post-type.function.js":
+/*!*******************************************!*\
+  !*** ./src/js/ajax-post-type.function.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n(function($){\n    const settings = $.extend({\n        url: '/wp-json/wp/v2/',\n        output: null,\n        postTemplate: `<div class=\"post\">{{title}}</div>`,\n        filterTemplate: `<li>{{name}}</li>`,\n        filter: {\n            postType: null,\n            taxonomy: null,\n            orderby: 'date',\n            sort: 'desc',\n            postsPerPage: null,\n            page: 1\n        }\n    });\n\n    $.fn.ajaxPostTypeFilter = async function(){\n        let initialisation;\n\n        settings.output = this;\n        settings.filter.postType = this.data('post-type');\n        settings.filter.postsPerPage = this.data('posts-per-page');\n\n        initialisation = buildWPQuery();\n\n        let data = await wpAPIEndPointQuery(initialisation);\n\n        renderTemplate(data);\n        renderFilters();\n    }\n\n    function buildWPQuery(){\n        let query;\n\n        query = settings.url + settings.filter.postType;\n\n        return query;\n    }\n\n    async function wpAPIEndPointQuery(url){\n        return new Promise(function(resolve){\n           $.ajax({\n               url: encodeURI(url),\n               context: document.body\n           }).done(function(data){\n               (data) ? resolve(data) : resolve(null);\n           });\n        });\n    }\n\n    function applyPostTemplate(post){\n        let html = settings.postTemplate;\n\n        html = html.replaceAll('{{title}}', post.title.rendered);\n\n        return html;\n    }\n\n    function renderTemplate(posts){\n         for(post of posts){\n            let postTemplate = applyPostTemplate(post);\n            settings.output.append(postTemplate);\n         }\n    }\n\n    function applyFilterTemplate(post){\n        let html = settings.filterTemplate;\n\n        html = html.replaceAll('{{name}}', post.name);\n\n        return html;\n    }\n\n    async function renderFilters(){\n        (!settings.filter.taxonomy) ? settings.filter.taxonomy = 'categories' : null;\n\n        let posts = await wpAPIEndPointQuery(settings.url + settings.filter.taxonomy);\n\n        for(post of posts){\n            let filterTemplate = applyFilterTemplate(post);\n            settings.output.append(filterTemplate);\n        }\n    }\n}(jQuery))\n\n//# sourceURL=webpack://react-wordpress/./src/js/ajax-post-type.function.js?");
+
+/***/ }),
+
 /***/ "./src/js/navigation.js":
 /*!******************************!*\
   !*** ./src/js/navigation.js ***!
@@ -77,7 +97,7 @@ eval("/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"./no
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var map = {\n\t\"./navigation.js\": \"./src/js/navigation.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/js sync recursive \\\\.js$\";\n\n//# sourceURL=webpack://react-wordpress/./src/js/_sync_\\.js$?");
+eval("var map = {\n\t\"./ajax-filter.js\": \"./src/js/ajax-filter.js\",\n\t\"./ajax-post-type.function.js\": \"./src/js/ajax-post-type.function.js\",\n\t\"./navigation.js\": \"./src/js/navigation.js\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/js sync recursive \\\\.js$\";\n\n//# sourceURL=webpack://react-wordpress/./src/js/_sync_\\.js$?");
 
 /***/ }),
 
